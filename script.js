@@ -32,12 +32,13 @@ const quizData = [
     answer: "a",
   },
   {
-    question: "fifth",
-    a: "a",
-    b: "b",
-    c: "c",
-    d: "d",
-    answer: "a",
+    question:
+      "When looking for all the processes running on a Linux system, what command should you use?",
+    a: "service",
+    b: "ps",
+    c: "oterm",
+    d: "xrun",
+    answer: "b",
   },
 ];
 
