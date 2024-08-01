@@ -46,7 +46,7 @@ ul li label {
     cursor: pointer;
 }
 
-.quizContainer button {
+#submit {
     background-color: #3498db;
     display: block;
     color: white;
@@ -57,7 +57,7 @@ ul li label {
     border-radius: 0;
 }
 
-.quizContainer button:hover {
+#submit:hover {
     background-color: #2980b9;
 }
 
@@ -78,9 +78,10 @@ header > * {
 }
 
 footer {
-    background-color: dimgray;
+    background-color: rgba(0,0,0,0.8);
     color: white;
     text-align: center;
+    padding: 1rem;
 }
 
 button {
