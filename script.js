@@ -5,7 +5,7 @@ const quizData = [
     b: "34",
     c: "25",
     d: "0",
-    answer: "c",
+    correct: "c",
   },
   {
     question: "Which one is the most popular programming language in 2024 ?",
@@ -13,7 +13,7 @@ const quizData = [
     b: "Java",
     c: "JavaScript",
     d: "C++",
-    answer: "a",
+    correct: "a",
   },
   {
     question: "What was the JavaScript name in the beginning ?",
@@ -21,7 +21,7 @@ const quizData = [
     b: "Netscape",
     c: "LiveScript",
     d: "Mocha",
-    answer: "d",
+    correct: "d",
   },
   {
     question: "HTML documents are saved in",
@@ -29,7 +29,7 @@ const quizData = [
     b: "Special binary format",
     c: "Machine language codes",
     d: "None of above",
-    answer: "a",
+    correct: "a",
   },
   {
     question:
@@ -38,7 +38,7 @@ const quizData = [
     b: "ps",
     c: "oterm",
     d: "xrun",
-    answer: "b",
+    correct: "b",
   },
 ];
 
@@ -87,9 +87,9 @@ function getSelected() {
 
 subButton.addEventListener("click", () => {
   const answer = getSelected();
-  console.log(quizData[currentQuiz].answer);
+  console.log(quizData[currentQuiz].correct);
   console.log(answer);
-  if (answer === quizData[currentQuiz].answer) {
+  if (answer === quizData[currentQuiz].correct) {
     console.log("well done");
     score++;
   } else console.log("opps");
