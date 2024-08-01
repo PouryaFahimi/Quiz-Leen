@@ -24,11 +24,11 @@ const quizData = [
     answer: "d",
   },
   {
-    question: "fourth",
-    a: "a",
-    b: "b",
-    c: "c",
-    d: "d",
+    question: "HTML documents are saved in",
+    a: "ASCII text",
+    b: "Special binary format",
+    c: "Machine language codes",
+    d: "None of above",
     answer: "a",
   },
   {
