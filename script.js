@@ -8,20 +8,20 @@ const quizData = [
     answer: "c",
   },
   {
-    question: "second",
-    a: "a",
-    b: "b",
-    c: "c",
-    d: "d",
+    question: "Which one is the most popular programming language in 2024 ?",
+    a: "Python",
+    b: "Java",
+    c: "JavaScript",
+    d: "C++",
     answer: "a",
   },
   {
-    question: "third",
-    a: "a",
-    b: "b",
-    c: "c",
-    d: "d",
-    answer: "a",
+    question: "What was the JavaScript name in the beginning ?",
+    a: "Script language",
+    b: "Netscape",
+    c: "LiveScript",
+    d: "Mocha",
+    answer: "d",
   },
   {
     question: "fourth",
@@ -33,22 +33,6 @@ const quizData = [
   },
   {
     question: "fifth",
-    a: "a",
-    b: "b",
-    c: "c",
-    d: "d",
-    answer: "a",
-  },
-  {
-    question: "sixth",
-    a: "a",
-    b: "b",
-    c: "c",
-    d: "d",
-    answer: "a",
-  },
-  {
-    question: "seventh",
     a: "a",
     b: "b",
     c: "c",
@@ -116,7 +100,7 @@ subButton.addEventListener("click", () => {
   } else {
     // alert("You finished !");
     quiz.innerHTML = `<h2>You finished !</h2>
-    <button onclick="location.reload()">Start again</button>`;
+    <button id="submit" onclick="location.reload()">Start again</button>`;
   }
 });
 
