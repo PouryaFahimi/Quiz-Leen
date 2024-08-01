@@ -54,7 +54,7 @@ ul li label {
     padding: 1rem;
     font-size: 20px;
     border: none;
-    cursor: pointer;
+    border-radius: 0;
 }
 
 .quizContainer button:hover {
@@ -73,8 +73,24 @@ header {
     display: flex;
 }
 
+header > * {
+    margin: 0 20px;
+}
+
 footer {
     background-color: dimgray;
     color: white;
     text-align: center;
+}
+
+button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(0,0,0,0.3);
 }
