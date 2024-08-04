@@ -11,9 +11,13 @@ body {
 
 main {
     min-height: 100vh;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
+}
+
+.hide {
+    display: none;
 }
 
 .quizContainer {
@@ -61,7 +65,7 @@ ul li label {
     background-color: #2980b9;
 }
 
-h2 {
+h2, h3 {
     text-align: center;
 }
 
