@@ -49,6 +49,8 @@ loadQuiz();
 function loadQuiz() {
   deselectAnswers();
 
+  console.log(localStorage.getItem("myKey"));
+
   const currentQuizData = quizData[currentQuiz];
 
   question.innerText = currentQuizData.question;

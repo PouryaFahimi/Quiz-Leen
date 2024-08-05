@@ -62,7 +62,6 @@ loadQuiz();
 
 function loadQuiz() {
   deselectAnswers();
-  localStorage.setItem("myKey", "Linux");
 
   const currentQuizData = quizData[currentQuiz];
 
