@@ -108,6 +108,7 @@ subButton.addEventListener("click", () => {
     loadQuiz();
   } else {
     // alert("You finished !");
+    document.getElementById("quizHeader").setAttribute("class", "hide");
     quiz.innerHTML = `<h2>Finished !</h2><h2>You answered ${score}/5 questions correctly.</h2>
       <button id="submit" onclick="location.reload()">Start again</button>`;
   }

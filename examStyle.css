@@ -22,11 +22,7 @@ main {
     display: none;
 }
 
-.quizContainer {
-    
-}
-
-.quizHeader {
+#quizHeader {
     padding: 1rem;
     margin-bottom: 1rem;
     background-color: #2980b9;
