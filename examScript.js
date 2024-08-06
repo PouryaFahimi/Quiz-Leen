@@ -52,10 +52,6 @@ function loadQuiz() {
   const currentQuizData = quizData[currentQuiz];
 
   question.innerText = currentQuizData.question;
-  // a_text.innerText = currentQuizData.answers.answer_a;
-  // b_text.innerText = currentQuizData.answers.answer_b;
-  // c_text.innerText = currentQuizData.answers.answer_c;
-  // d_text.innerText = currentQuizData.answers.answer_d;
 
   let i = 0;
   for (const key in currentQuizData.answers) {
@@ -68,9 +64,6 @@ function loadQuiz() {
     }
     i++;
   }
-
-  console.log(choices[0].parentElement);
-  console.log(choices[0].innerText);
 }
 
 function getSelected() {
@@ -93,7 +86,6 @@ function corrector() {
   }
   console.log(test);
   console.log(getSelected());
-  console.log(test.includes(getSelected()));
   return test.includes(getSelected());
 }
 
@@ -120,7 +112,6 @@ subButton.addEventListener("click", () => {
   if (currentQuiz < quizData.length) {
     loadQuiz();
   } else {
-    // alert("You finished !");
     document.getElementById("quizHeader").setAttribute("class", "hide");
     quiz.innerHTML = `<h2>Finished !</h2><h2>You answered ${score}/${quizData.length} questions correctly.</h2>
       <button id="submit" onclick="location.reload()">Start again</button>`;

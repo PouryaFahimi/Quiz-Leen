@@ -28,6 +28,8 @@ main {
     background-color: #2980b9;
     color: white;
     border-radius: 15px;
+    text-align: center;
+    font-size: 30px;
 }
 
 ul {
@@ -41,12 +43,33 @@ ul {
 }
 
 ul li {
-    font-size: 20px;
+    font-size: 25px;
     margin: 1rem 0;
 }
 
 ul li label {
     cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10vh;
+}
+
+input {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 3px solid gray;
+    border-radius: 100%;
+    position: relative;
+    vertical-align: bottom;
+}
+
+input:hover {
+    background-color: gray;
+}
+
+input:checked {
+    background-color: green;
+    border-color: green;
 }
 
 #submit {
@@ -56,7 +79,7 @@ ul li label {
     color: white;
     width: 100%;
     padding: 1rem;
-    font-size: 20px;
+    font-size: 25px;
     border: none;
 }
 
