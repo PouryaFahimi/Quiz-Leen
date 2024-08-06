@@ -43,10 +43,10 @@ const feedbackEl = document.getElementById("feedback");
 const answers = document.querySelectorAll(".answer");
 
 receiveQuiz();
-loadQuiz();
 
 function loadQuiz() {
   deselectAnswers();
+  console.log("here");
 
   console.log(localStorage.getItem("myKey"));
 
@@ -126,7 +126,7 @@ function deselectAnswers() {
   answers.forEach((el) => (el.checked = false));
 }
 
-function receiveQuiz() {
+async function receiveQuiz() {
   // Define the API URL
   const apiUrl =
     "https://quizapi.io/api/v1/questions?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm&limit=10";
@@ -147,4 +147,21 @@ function receiveQuiz() {
     .catch((error) => {
       console.error("Error:", error);
     });
+
+  // const response = await fetch(apiUrl);
+  // quizData = await response.json();
+
+  console.log("calling");
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+
+  loadQuiz();
+}
+
+function resolveAfter2Seconds() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("resolved");
+    }, 2000);
+  });
 }
