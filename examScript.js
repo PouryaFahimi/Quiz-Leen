@@ -1,4 +1,4 @@
-const quizData = [
+let quizData = [
   {
     id: 1,
     question: "How to delete a directory in Linux?",
@@ -42,6 +42,7 @@ const feedbackEl = document.getElementById("feedback");
 
 const answers = document.querySelectorAll(".answer");
 
+receiveQuiz();
 loadQuiz();
 
 function loadQuiz() {
@@ -55,7 +56,6 @@ function loadQuiz() {
 
   let i = 0;
   for (const key in currentQuizData.answers) {
-    console.log(key);
     if (!currentQuizData.answers[key]) {
       choices[i].parentElement.style = "display: none";
     } else {
@@ -86,6 +86,9 @@ function corrector() {
   }
   console.log(test);
   console.log(getSelected());
+  if (!test && !getSelected()) {
+    return true;
+  }
   return test.includes(getSelected());
 }
 
@@ -113,6 +116,7 @@ subButton.addEventListener("click", () => {
     loadQuiz();
   } else {
     document.getElementById("quizHeader").setAttribute("class", "hide");
+    document.getElementById("questionTag").setAttribute("class", "hide");
     quiz.innerHTML = `<h2>Finished !</h2><h2>You answered ${score}/${quizData.length} questions correctly.</h2>
       <button id="submit" onclick="location.reload()">Start again</button>`;
   }
@@ -120,4 +124,27 @@ subButton.addEventListener("click", () => {
 
 function deselectAnswers() {
   answers.forEach((el) => (el.checked = false));
+}
+
+function receiveQuiz() {
+  // Define the API URL
+  const apiUrl =
+    "https://quizapi.io/api/v1/questions?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm&limit=10";
+
+  // Make a GET request
+  fetch(apiUrl)
+    .then((response) => {
+      console.log(response);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      quizData = data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
