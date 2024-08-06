@@ -35,10 +35,8 @@ let timer;
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
 
-const a_text = document.getElementById("a_text");
-const b_text = document.getElementById("b_text");
-const c_text = document.getElementById("c_text");
-const d_text = document.getElementById("d_text");
+const choices = document.getElementsByTagName("label");
+
 const subButton = document.getElementById("submit");
 const feedbackEl = document.getElementById("feedback");
 
@@ -54,10 +52,25 @@ function loadQuiz() {
   const currentQuizData = quizData[currentQuiz];
 
   question.innerText = currentQuizData.question;
-  a_text.innerText = currentQuizData.answers.answer_a;
-  b_text.innerText = currentQuizData.answers.answer_b;
-  c_text.innerText = currentQuizData.answers.answer_c;
-  d_text.innerText = currentQuizData.answers.answer_d;
+  // a_text.innerText = currentQuizData.answers.answer_a;
+  // b_text.innerText = currentQuizData.answers.answer_b;
+  // c_text.innerText = currentQuizData.answers.answer_c;
+  // d_text.innerText = currentQuizData.answers.answer_d;
+
+  let i = 0;
+  for (const key in currentQuizData.answers) {
+    console.log(key);
+    if (!currentQuizData.answers[key]) {
+      choices[i].parentElement.style = "display: none";
+    } else {
+      choices[i].innerText = currentQuizData.answers[key];
+      choices[i].parentElement.style = "display: list-item";
+    }
+    i++;
+  }
+
+  console.log(choices[0].parentElement);
+  console.log(choices[0].innerText);
 }
 
 function getSelected() {
@@ -109,7 +122,7 @@ subButton.addEventListener("click", () => {
   } else {
     // alert("You finished !");
     document.getElementById("quizHeader").setAttribute("class", "hide");
-    quiz.innerHTML = `<h2>Finished !</h2><h2>You answered ${score}/5 questions correctly.</h2>
+    quiz.innerHTML = `<h2>Finished !</h2><h2>You answered ${score}/${quizData.length} questions correctly.</h2>
       <button id="submit" onclick="location.reload()">Start again</button>`;
   }
 });
