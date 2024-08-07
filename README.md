@@ -19,7 +19,7 @@ There is already a local quiz which is so simple and was made in initial version
 
 ### Quiz with API Call
 
-The quesions arrive from [Quiz API](https://quizapi.io/) which is a simple HTTP REST API for technical quizzes including a wide variety of topics, different difficulty levels, tags and also the limit number of questions; The arrival data in GET request can be filtered by each one of these parameters.
+The questions arrive from [Quiz API](https://quizapi.io/) which is a simple HTTP REST API for technical quizzes including a wide variety of topics, different difficulty levels, tags and also the limit number of questions; The arrival data in GET request can be filtered by each one of these parameters.
 
 ### Future Updates
 
