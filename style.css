@@ -15,51 +15,71 @@ main {
     /* display: block; */
     align-items: center;
     justify-content: center;
+    padding: 1rem 2rem;
 }
 
 .hide {
     display: none;
 }
 
-.quizContainer {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    width: 400px;
-    max-width: 100%;
-    box-shadow: 0 0 5px rgba(0,0,0,1);
-    margin: auto;
-}
-
 #quizHeader {
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(117,183,255,1) 100%);
     padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #2980b9;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 30px;
 }
 
 ul {
     list-style-type: none;
     padding: 1rem;
+    background-color: white;
+    border-radius: 15px;
+    max-width: 100%;
+    border: 8px solid gray;
+    margin-bottom: 1rem;
 }
 
 ul li {
-    font-size: 20px;
+    font-size: 25px;
     margin: 1rem 0;
 }
 
 ul li label {
     cursor: pointer;
+    padding-left: 10px;
+}
+
+input {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 3px solid gray;
+    border-radius: 100%;
+    position: relative;
+    vertical-align: bottom;
+}
+
+input:hover {
+    background-color: gray;
+}
+
+input:checked {
+    background-color: green;
+    border-color: green;
 }
 
 #submit {
     background-color: #3498db;
+    border-radius: 15px;
     display: block;
     color: white;
     width: 100%;
     padding: 1rem;
-    font-size: 20px;
+    font-size: 25px;
     border: none;
-    border-radius: 0;
 }
 
 #submit:hover {

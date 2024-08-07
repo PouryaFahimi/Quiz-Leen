@@ -146,6 +146,7 @@ async function receiveQuiz() {
     })
     .catch((error) => {
       console.error("Error:", error);
+      // here must put a error window
     });
 
   // const response = await fetch(apiUrl);
