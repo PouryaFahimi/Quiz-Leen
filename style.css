@@ -215,3 +215,16 @@ footer img {
 .catContainer {
     margin: 20px;
 }
+
+#preview {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: gray;
+}
+
+#preview img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}

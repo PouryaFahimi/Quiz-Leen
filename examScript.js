@@ -46,6 +46,9 @@ receiveQuiz();
 
 function loadQuiz() {
   deselectAnswers();
+  document.getElementById("preview").style = "display: none";
+  quiz.style = "display: block";
+
   console.log("here");
 
   console.log(localStorage.getItem("myKey"));
@@ -158,16 +161,16 @@ async function receiveQuiz() {
   // quizData = await response.json();
 
   console.log("calling");
-  const result = await resolveAfter2Seconds();
+  const result = await resolveAfter3Seconds();
   console.log(result);
 
   loadQuiz();
 }
 
-function resolveAfter2Seconds() {
+function resolveAfter3Seconds() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve("resolved");
-    }, 2000);
+    }, 3000);
   });
 }
