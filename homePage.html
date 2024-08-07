@@ -9,21 +9,27 @@
 <body>
     <header>
         <h3 class="title">Quiz Leen</h3>
-        <a href="homePage.html">Home</a>
-        <a href="topics.html">Topics</a>
-        <a href="">Articles</a>
+        <a class="topLink" href="homePage.html">Home</a>
+        <a class="topLink" href="topics.html">Topics</a>
+        <a class="topLink" href="">Articles</a>
     </header>
     <main>
         <div id="welcomBox">
-            <h2 id="welcomTitle">Welcom to Quiz Leen</h2>
+            <h2 class="welcomTitle">Welcom to Quiz Leen</h2>
             <p>Test your knowledge, learn and enjoy</p>
         </div>
         <button onclick="location.href = '#quiz'">
             <div id="jumpToQuiz">
-            <h3 class="title">Let's start with a simple quiz</h3>
-            <p>This quiz is local and doesn't need to network</p>
-        </div>
+                <h3 class="title">Let's start with a simple quiz</h3>
+                <p>This quiz is local and doesn't need to network</p>
+            </div>
         </button>
+        <a href="topics.html">
+            <div id="topicBox">
+                <h2 class="welcomTitle">Explore Topics</h2>
+                <p>Choose one from various categories</p>
+            </div>
+        </a>
         <div class="borderBox">
             <div id="notice">
                 <img src="pics/danger.png" alt="danger">
@@ -33,9 +39,6 @@
             <p style="text-align: center;">
                 This webpage isn't complete and some parts are in the proccess of developing
             </p>
-        </div>
-        <div class="borderBox">
-            <h3 class="title">Notes :</h3>
         </div>
         <div class="quizContainer" id="quiz">
             <h3 id="questionTag">Question :</h3>
