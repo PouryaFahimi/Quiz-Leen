@@ -40,10 +40,10 @@ main {
 
 #jumpToQuiz {
     padding: 1rem 2rem;
-    margin-bottom: 1rem;
     background-color: #2980b9;
     color: white;
     border-radius: 15px;
+    text-align: left;
 }
 
 #quizHeader {
@@ -56,14 +56,17 @@ main {
     font-size: 30px;
 }
 
-ul {
-    list-style-type: none;
+.borderBox {
     padding: 1rem 2rem;
     background-color: white;
     border-radius: 15px;
     max-width: 100%;
     border: 8px solid gray;
     margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
 }
 
 ul li {
@@ -149,15 +152,15 @@ footer {
 }
 
 button {
-    font-size: 20px;
     background: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    padding: 0;
+    width: 100%;
     font-family: inherit;
 }
 
-button:hover, a:hover {
+a:hover {
     background-color: rgba(0,0,0,0.3);
 }
 

@@ -18,16 +18,18 @@
             <h2 id="welcomTitle">Welcom to Quiz Leen</h2>
             <p>Test your knowledge, learn and enjoy</p>
         </div>
-        <div id="jumpToQuiz">
+        <button onclick="location.href = '#quiz'">
+            <div id="jumpToQuiz">
             <h3 class="title">Let's start with a simple quiz</h3>
             <p>This quiz is local and doesn't need to network</p>
         </div>
+        </button>
         <div class="quizContainer" id="quiz">
             <h3 id="questionTag">Question :</h3>
             <div id="quizHeader">
                 <p id="question">Question text</p>
             </div>
-            <ul>
+            <ul class="borderBox">
                 <li>
                     <input type="radio" id="a" name="answer" class="answer"><label id="a_text" for="a">Option</label>
                 </li>
