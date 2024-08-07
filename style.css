@@ -34,7 +34,7 @@ main {
 
 ul {
     list-style-type: none;
-    padding: 1rem;
+    padding: 1rem 2rem;
     background-color: white;
     border-radius: 15px;
     max-width: 100%;
@@ -108,7 +108,7 @@ header > * {
 }
 
 footer {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     color: white;
     text-align: center;
     padding: 1rem;
