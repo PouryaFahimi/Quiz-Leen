@@ -9,15 +9,22 @@
 <body>
     <header>
         <h3 class="title">Quiz Leen</h3>
-        <a class="topLink" href="homePage.html">Home</a>
+        <a class="topLink" href="../homePage.html">Home</a>
         <a class="topLink" href="topics.html">Topics</a>
         <a class="topLink" href="">Articles</a>
     </header>
     <main>
         <div id="preview">
-            <img src="pics/download.png" alt="download">
+            <img src="../pics/download.png" alt="download">
             <h3>Receiving questions ...</h3>
         </div>
+        <div id="error" style="display: none;">
+            <img src="../pics/error.png" alt="error">
+            <h3>Unable to receive data. Check your connection</h3>
+        </div>
+        <button id="reloadButton" onclick="location.reload()" style="display: none;">
+            Reload
+        </button>
         <div class="quizContainer" id="quiz" style="display: none;">
             <h3 id="questionTag">Question :</h3>
             <div id="quizHeader">
@@ -52,7 +59,7 @@
             <p>Created by Pourya Fahimi, All Rights reserved</p>
         </div>
         <a id="imgLink" href="https://github.com/PouryaFahimi">
-            <img src="pics/githubLogo.png" alt="githubLogo">
+            <img src="../pics/githubLogo.png" alt="githubLogo">
         </a>
     </footer>
     <script src="../scripts/examScript.js"></script>

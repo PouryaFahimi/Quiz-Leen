@@ -123,7 +123,7 @@ input:checked {
     border-color: rgb(46, 204, 113);
 }
 
-#submit {
+#submit, #reloadButton {
     background-color: #3498db;
     border-radius: 15px;
     display: block;
@@ -134,7 +134,7 @@ input:checked {
     border: none;
 }
 
-#submit:hover {
+#submit:hover, #reloadButton:hover {
     background-color: #2980b9;
 }
 
@@ -223,8 +223,13 @@ footer img {
     color: gray;
 }
 
-#preview img {
+#preview img, #error img {
     width: 80px;
     height: 80px;
     margin-right: 20px;
+}
+
+#error {
+    justify-content: center;
+    align-items: center;
 }

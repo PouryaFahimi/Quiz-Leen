@@ -1,4 +1,6 @@
-let quizData = [
+let quizData = null;
+
+/* sample arrival object
   {
     id: 1,
     question: "How to delete a directory in Linux?",
@@ -25,8 +27,8 @@ let quizData = [
     tags: [],
     category: "linux",
     difficulty: "Easy",
-  },
-];
+  }
+*/
 
 let currentQuiz = 0;
 let score = 0;
@@ -139,6 +141,8 @@ async function receiveQuiz() {
     apiUrl += "&category=" + category;
   }
 
+  let nokay = false;
+
   // Make a GET request
   fetch(apiUrl)
     .then((response) => {
@@ -155,6 +159,10 @@ async function receiveQuiz() {
     .catch((error) => {
       console.error("Error:", error);
       // here must put a error window
+      nokay = true;
+      document.getElementById("preview").style = "display: none";
+      document.getElementById("error").style = "display: flex";
+      document.getElementById("reloadButton").style = "display: block";
     });
 
   // const response = await fetch(apiUrl);
@@ -164,7 +172,11 @@ async function receiveQuiz() {
   const result = await resolveAfter3Seconds();
   console.log(result);
 
-  loadQuiz();
+  if (quizData === null) {
+    document.getElementById("preview").style = "display: none";
+    document.getElementById("error").style = "display: flex";
+    document.getElementById("reloadButton").style = "display: block";
+  } else loadQuiz();
 }
 
 function resolveAfter3Seconds() {
