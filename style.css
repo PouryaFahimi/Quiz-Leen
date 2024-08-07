@@ -34,7 +34,6 @@ main {
     text-align: left;
     font-size: 50px;
     text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 4rem;
 }
 
@@ -102,8 +101,13 @@ input:checked {
     background-color: #2980b9;
 }
 
+#feedback {
+    height: 25px;
+}
+
 h2, h3 {
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -115,8 +119,6 @@ header {
 
 #title {
     font-size: 30px;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header > * {
@@ -137,6 +139,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: inherit;
 }
 
 button:hover, a:hover {
