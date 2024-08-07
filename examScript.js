@@ -128,8 +128,13 @@ function deselectAnswers() {
 
 async function receiveQuiz() {
   // Define the API URL
-  const apiUrl =
+  let apiUrl =
     "https://quizapi.io/api/v1/questions?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm&limit=10";
+
+  const category = localStorage.getItem("myKey");
+  if (category !== "Random") {
+    apiUrl += "&category=" + category;
+  }
 
   // Make a GET request
   fetch(apiUrl)
