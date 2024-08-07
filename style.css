@@ -28,6 +28,7 @@ main {
     padding: 1rem 2rem;
     border-radius: 15px;
     font-size: 20px;
+    margin-bottom: 2rem;
 }
 
 #welcomTitle {
@@ -37,8 +38,16 @@ main {
     margin-bottom: 4rem;
 }
 
+#jumpToQuiz {
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    background-color: #2980b9;
+    color: white;
+    border-radius: 15px;
+}
+
 #quizHeader {
-    padding: 1rem;
+    padding: 2rem;
     margin-bottom: 1rem;
     background-color: #2980b9;
     color: white;
@@ -110,6 +119,10 @@ h2, h3 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+p {
+    margin: 0;
+}
+
 header {
     font-size: 20px;
     background-color: #f39c12;
@@ -117,8 +130,10 @@ header {
     display: flex;
 }
 
-#title {
+.title {
     font-size: 30px;
+    text-align: left;
+    margin: 0;
 }
 
 header > * {
