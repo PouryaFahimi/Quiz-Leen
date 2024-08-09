@@ -15,11 +15,13 @@ main {
     /* display: block; */
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    /* padding: 2rem; */
+    padding: 2%;
 }
 
 main > * {
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
+    margin-bottom: 2%;
 }
 
 .hide {
@@ -32,7 +34,7 @@ main > * {
     padding: 1rem 2rem;
     border-radius: 15px;
     font-size: 20px;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 #topicBox {
@@ -81,7 +83,7 @@ main > * {
 }
 
 .borderBox {
-    padding: 1rem 2rem;
+    padding: 1% 2%;
     background-color: white;
     border-radius: 15px;
     max-width: 100%;
@@ -101,7 +103,7 @@ ul li {
 
 ul li label {
     cursor: pointer;
-    padding-left: 10px;
+    padding-left: 1%;
 }
 
 input {
@@ -186,7 +188,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     padding: 10px;
-    margin-left: 30px;
+    margin-left: 2%;
     text-decoration: none;
     color: black;
 }
@@ -203,17 +205,13 @@ footer img {
 .category {
     border-radius: 10px;
     width: 100%;
-    height: 70px;
-    margin: 20px 0;
-    padding-left: 30px;
+    min-height: 6vh;
+    margin: 2vh 0;
+    padding-left: 2vw;
     text-align: left;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 50px;
+    font-size: 6vh;
     color: white;
-}
-
-.catContainer {
-    margin: 20px;
 }
 
 #preview {
