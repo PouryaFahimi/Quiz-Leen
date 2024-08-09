@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Impact;
+    src: url('/fonts/impact.ttf') format('truetype');
+}
+
 body {
     /* background: rgb(5,0,87);
     background: linear-gradient(0deg, rgba(5,0,87,1) 0%, rgba(255,255,255,1) 100%); */
