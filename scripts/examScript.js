@@ -144,7 +144,7 @@ async function receiveQuiz() {
   let nokay = false;
 
   // Make a GET request
-  fetch(apiUrl)
+  await fetch(apiUrl)
     .then((response) => {
       console.log(response);
       if (!response.ok) {
@@ -158,31 +158,28 @@ async function receiveQuiz() {
     })
     .catch((error) => {
       console.error("Error:", error);
-      // here must put a error window
+      // here must put an error window
       nokay = true;
-      document.getElementById("preview").style = "display: none";
-      document.getElementById("error").style = "display: flex";
-      document.getElementById("reloadButton").style = "display: block";
+      showError();
+      console.log('fetch error');
     });
 
   // const response = await fetch(apiUrl);
   // quizData = await response.json();
 
-  console.log("calling");
-  const result = await resolveAfter3Seconds();
-  console.log(result);
+  // console.log("calling");
+  // const result = await resolveAfter3Seconds();
+  // console.log(result);
 
   if (quizData === null) {
-    document.getElementById("preview").style = "display: none";
-    document.getElementById("error").style = "display: flex";
-    document.getElementById("reloadButton").style = "display: block";
+    showError();
+    console.log('quiz data is null');
+    return false;
   } else loadQuiz();
 }
 
-function resolveAfter3Seconds() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("resolved");
-    }, 3000);
-  });
+function showError() {
+  document.getElementById("preview").style = "display: none";
+  document.getElementById("error").style = "display: flex";
+  document.getElementById("reloadButton").style = "display: block";
 }
