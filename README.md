@@ -4,7 +4,7 @@ Welcom to this repo, **Quiz Leen** is a simple project that I developed to impro
 
 ### Installation
 
-First clone repository, if you can run home page with live server, it's excellent but if not, no problem, run the home page with your favorite browser and enjoy :)
+First clone repository, then open home page with your favorite browser or run it using live sever and enjoy :)
 
 ### Sections
 
