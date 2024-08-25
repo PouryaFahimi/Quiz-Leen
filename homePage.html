@@ -1,76 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Leen</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="pics/page-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h3 class="title">Quiz Leen</h3>
-        <a class="topLink" href="homePage.html">Home</a>
-        <a class="topLink" href="pages/topics.html">Topics</a>
-        <a class="topLink">Articles</a>
+      <h3 class="title">Quiz Leen</h3>
+      <a class="topLink" href="homePage.html">Home</a>
+      <a class="topLink" href="pages/topics.html">Topics</a>
+      <a class="topLink">Articles</a>
     </header>
     <main>
-        <div id="welcomBox">
-            <h2 class="welcomTitle">Welcom to Quiz Leen</h2>
-            <p>Test your knowledge, learn and enjoy</p>
+      <div id="welcomeBox">
+        <h2 class="welcomeTitle">Welcome to Quiz Leen</h2>
+        <p>Test your knowledge, learn and enjoy</p>
+      </div>
+      <button onclick="location.href = '#quiz'">
+        <div id="jumpToQuiz">
+          <h3 class="title">Let's start with a simple quiz</h3>
+          <p>This quiz is local and doesn't need to network</p>
         </div>
-        <button onclick="location.href = '#quiz'">
-            <div id="jumpToQuiz">
-                <h3 class="title">Let's start with a simple quiz</h3>
-                <p>This quiz is local and doesn't need to network</p>
-            </div>
-        </button>
-        <a href="pages/topics.html">
-            <div id="topicBox">
-                <h2 class="welcomTitle">Explore Topics</h2>
-                <p>Choose one from various categories</p>
-            </div>
-        </a>
-        <div class="borderBox">
-            <div id="notice">
-                <img src="pics/danger.png" alt="danger">
-                <h3 class="title">Pay Attention</h3>
-                <img src="pics/danger.png" alt="danger">
-            </div>
-            <p style="text-align: center;">
-                This webpage isn't complete and some parts are in the proccess of developing
-            </p>
+      </button>
+      <a href="pages/topics.html">
+        <div id="topicBox">
+          <h2 class="welcomeTitle">Explore Topics</h2>
+          <p>Choose one from various categories</p>
         </div>
-        <div class="quizContainer" id="quiz">
-            <h3 id="questionTag">Question :</h3>
-            <div id="quizHeader">
-                <p id="question">Question text</p>
-            </div>
-            <ul class="borderBox">
-                <li>
-                    <input type="radio" id="a" name="answer" class="answer"><label id="a_text" for="a">Option</label>
-                </li>
-                <li>
-                    <input type="radio" id="b" name="answer" class="answer"><label id="b_text" for="b">Option</label>
-                </li>
-                <li>
-                    <input type="radio" id="c" name="answer" class="answer"><label id="c_text" for="c">Option</label>
-                </li>
-                <li>
-                    <input type="radio" id="d" name="answer" class="answer"><label id="d_text" for="d">Option</label>
-                </li>
-            </ul>
-            <button id="submit">Submit</button>
+      </a>
+      <div class="borderBox">
+        <div id="notice">
+          <img src="pics/danger.png" alt="danger" />
+          <h3 class="title">Pay Attention</h3>
+          <img src="pics/danger.png" alt="danger" />
         </div>
-        <h3 id="feedback"></h3>
+        <p style="text-align: center">
+          This webpage isn't complete and some parts are in the proccess of
+          developing
+        </p>
+      </div>
+      <div class="quizContainer" id="quiz">
+        <h3 id="questionTag">Question :</h3>
+        <div id="quizHeader">
+          <p id="question">Question text</p>
+        </div>
+        <ul class="borderBox">
+          <li>
+            <input type="radio" id="a" name="answer" class="answer" /><label
+              id="a_text"
+              for="a"
+              >Option</label
+            >
+          </li>
+          <li>
+            <input type="radio" id="b" name="answer" class="answer" /><label
+              id="b_text"
+              for="b"
+              >Option</label
+            >
+          </li>
+          <li>
+            <input type="radio" id="c" name="answer" class="answer" /><label
+              id="c_text"
+              for="c"
+              >Option</label
+            >
+          </li>
+          <li>
+            <input type="radio" id="d" name="answer" class="answer" /><label
+              id="d_text"
+              for="d"
+              >Option</label
+            >
+          </li>
+        </ul>
+        <button id="submit">Submit</button>
+      </div>
+      <h3 id="feedback"></h3>
     </main>
     <footer>
-        <div class="navbar">
-            <p>Created by Pourya Fahimi, All Rights reserved</p>
-        </div>
-        <a id="imgLink" href="https://github.com/PouryaFahimi">
-            <img src="pics/githubLogo.png" alt="githubLogo">
-        </a>
+      <div class="navbar">
+        <p>Created by Pourya Fahimi, All Rights reserved</p>
+      </div>
+      <a id="imgLink" href="https://github.com/PouryaFahimi">
+        <img src="pics/githubLogo.png" alt="githubLogo" />
+      </a>
     </footer>
     <script src="scripts/homeScript.js"></script>
-</body>
+  </body>
 </html>
