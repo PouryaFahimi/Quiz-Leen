@@ -228,17 +228,30 @@ footer img {
 .detailBox {
   border-radius: 10px;
   background-color: black;
-  display: flex;
+  display: inherit;
   align-items: inherit;
   min-height: 64px;
-  margin-left: 2vw;
+  margin-left: 1vw;
   /* font-size: 50px; */
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: white;
 }
 
 .quizDetails {
-  appearance: none;
+  /* appearance: none; */
+  display: none;
+}
+
+.details {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 10px;
+  font-size: 2rem;
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px;
+  padding: 0 12px;
 }
 
 .quizDetails:checked + label {
@@ -247,11 +260,14 @@ footer img {
 }
 
 .category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 10px;
   width: 100%;
   min-height: 64px;
   margin: 15px 0;
-  padding-left: 2vw;
+  padding: 0 2vw;
   text-align: left;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 50px;
