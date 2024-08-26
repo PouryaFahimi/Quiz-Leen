@@ -220,6 +220,11 @@ footer img {
   border-radius: 25px;
 }
 
+.catHeader {
+  display: flex;
+  align-items: center;
+}
+
 .category {
   border-radius: 10px;
   width: 100%;
