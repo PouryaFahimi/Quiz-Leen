@@ -228,7 +228,8 @@ footer img {
 .detailBox {
   border-radius: 10px;
   background-color: black;
-  display: inherit;
+  display: flex;
+  justify-content: center;
   align-items: inherit;
   min-height: 64px;
   margin-left: 1vw;
@@ -252,6 +253,7 @@ footer img {
   justify-content: center;
   margin: 0 16px;
   padding: 0 12px;
+  cursor: pointer;
 }
 
 .quizDetails:checked + label {
@@ -311,5 +313,13 @@ footer img {
 
   .title {
     font-size: 24px;
+  }
+
+  .catHeader {
+    display: block;
+  }
+
+  .detailBox {
+    margin: 10px 0;
   }
 }
