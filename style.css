@@ -120,7 +120,7 @@ ul li label {
   padding-left: 1%;
 }
 
-input {
+.answer {
   appearance: none;
   width: 30px;
   height: 30px;
@@ -130,11 +130,11 @@ input {
   vertical-align: bottom;
 }
 
-input:hover {
+.answer:hover {
   background-color: gray;
 }
 
-input:checked {
+.answer:checked {
   background-color: rgb(46, 204, 113);
   border-color: rgb(46, 204, 113);
 }
@@ -225,10 +225,31 @@ footer img {
   align-items: center;
 }
 
+.detailBox {
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+  align-items: inherit;
+  min-height: 64px;
+  margin-left: 2vw;
+  /* font-size: 50px; */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+}
+
+.quizDetails {
+  appearance: none;
+}
+
+.quizDetails:checked + label {
+  background-color: white;
+  color: black;
+}
+
 .category {
   border-radius: 10px;
   width: 100%;
-  min-height: 6vh;
+  min-height: 64px;
   margin: 15px 0;
   padding-left: 2vw;
   text-align: left;
