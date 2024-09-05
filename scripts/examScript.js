@@ -51,10 +51,6 @@ function loadQuiz() {
   document.getElementById("preview").style = "display: none";
   quiz.style = "display: block";
 
-  console.log("here");
-
-  console.log(localStorage.getItem("myKey"));
-
   const currentQuizData = quizData[currentQuiz];
 
   question.innerText = currentQuizData.question;
@@ -134,14 +130,21 @@ function deselectAnswers() {
 async function receiveQuiz() {
   // Define the API URL
   let apiUrl =
-    "https://quizapi.io/api/v1/questions?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm&limit=10";
+    "https://quizapi.io/api/v1/questions?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm&limit=";
 
-  const category = localStorage.getItem("myKey");
+  apiUrl += localStorage.getItem('limit');
+  const category = localStorage.getItem("category");
+  const level = localStorage.getItem('level');
+
   if (category !== "Random") {
     apiUrl += "&category=" + category;
   }
+  if (level !== "undefined") {
+    apiUrl += "&difficulty=" + level;
+  }
 
   let nokay = false;
+  console.log(apiUrl);
 
   // Make a GET request
   await fetch(apiUrl)

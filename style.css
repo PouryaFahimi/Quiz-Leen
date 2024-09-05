@@ -3,13 +3,21 @@
   src: url("/fonts/impact.ttf") format("truetype");
 }
 
-body {
-  /* background: rgb(5,0,87);
-    background: linear-gradient(0deg, rgba(5,0,87,1) 0%, rgba(255,255,255,1) 100%); */
+@font-face {
+  font-family: Amble;
+  src: url("/fonts/Amble-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
 
-  /* display: flex; */
+@font-face {
+  font-family: Amble;
+  src: url("/fonts/Amble-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+body {
   overflow: auto;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Amble, Verdana, sans-serif;
   margin: 0;
   /* min-height: 100vh; */
   box-sizing: content-box;
@@ -163,14 +171,15 @@ ul li label {
 h2,
 h3 {
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
   font-size: 20px;
   background-color: #f39c12;
-  padding: 16px;
+  padding: 0 2%;
+  min-height: 70px;
   display: flex;
+  align-items: center;
 }
 
 .title {
@@ -298,6 +307,11 @@ footer img {
 @media only screen and (max-width: 900px) {
   .category {
     margin: 10px 0;
+  }
+
+  header {
+    padding: 0;
+    justify-content: space-evenly;
   }
 
   #welcomeBox,
