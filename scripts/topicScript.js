@@ -1,12 +1,12 @@
 const topicButtons = document.getElementsByClassName("category");
 const tagButton = topicButtons[0];
+let tagData = null;
 
 const limitNum = document.getElementsByName('quizNum');
 const levels = document.getElementsByName('level');
 
 for (const el of topicButtons) {
   el.addEventListener("click", () => {
-    console.log(el.id);
     transfer(el.id);
   });
 }
@@ -30,6 +30,38 @@ function questionLevel() {
     if(el.checked)
       return el.id;
   }
+}
+
+async function receiveTags() {
+  let apiUrl =
+    "https://quizapi.io/api/v1/tags?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm";
+
+  let nokay = false;
+
+  await fetch(apiUrl)
+    .then((response) => {
+      console.log(response);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      tagData = data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      nokay = true;
+      showError();
+      console.log('fetch error');
+    });
+
+  // if (quizData === null) {
+  //   showError();
+  //   console.log('quiz data is null');
+  //   return false;
+  // } else loadQuiz();
 }
 
 function insertOptions() {
@@ -56,3 +88,4 @@ function makeCheckbox(id) {
 }
 
 //insertOptions();
+//receiveTags();
