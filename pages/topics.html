@@ -48,6 +48,17 @@
           <label for="hard" class="details">hard</label>
         </div>
       </div>
+    <div id="preview" style="display: none;"">
+        <img src="../pics/download.png" alt="download">
+        <h3>Receiving Tags ...</h3>
+    </div>
+    <div id="error" style="display: none;">
+        <img src="../pics/error.png" alt="error">
+        <h3>Unable to receive data. Check your connection</h3>
+    </div>
+    <button id="reloadButton" onclick="location.reload()" style="display: none;">
+        Reload
+    </button>
       <div class="catContainer">
         <p style="font-size: 2rem">Select a category :</p>
         <button id="Random" class="category" style="background-color: black">

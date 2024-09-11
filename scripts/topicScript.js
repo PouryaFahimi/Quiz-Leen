@@ -5,10 +5,10 @@ let tagData = null;
 const limitNum = document.getElementsByName('quizNum');
 const levels = document.getElementsByName('level');
 
-for (const el of topicButtons) {
-  el.addEventListener("click", () => {
-    transfer(el.id);
-  });
+for (let i = 1; i < topicButtons.length; i++) {
+  topicButtons[i].addEventListener("click", () => {
+    transfer(topicButtons[i].id);
+  });  
 }
 
 function transfer(value) {
@@ -32,6 +32,11 @@ function questionLevel() {
   }
 }
 
+tagButton.addEventListener("click", () => {
+  document.getElementById("preview").style.display = "flex";
+  receiveTags();
+});
+
 async function receiveTags() {
   let apiUrl =
     "https://quizapi.io/api/v1/tags?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm";
@@ -49,6 +54,7 @@ async function receiveTags() {
     .then((data) => {
       console.log(data);
       tagData = data;
+      insertOptions();
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -56,35 +62,36 @@ async function receiveTags() {
       showError();
       console.log('fetch error');
     });
-
-  // if (quizData === null) {
-  //   showError();
-  //   console.log('quiz data is null');
-  //   return false;
-  // } else loadQuiz();
 }
 
 function insertOptions() {
+  document.getElementById("preview").style.display = "none";
   let tempDiv = document.createElement("div");
   tempDiv.setAttribute("class", "catHeader");
   tempDiv.insertAdjacentElement("beforeend", makeCheckbox("alaki"));
   tempDiv.insertAdjacentElement("beforeend", makeLabel("tag label", "alaki"));
-  console.log(document.querySelector(".catHeader"));
   document.querySelector(".catHeader").insertAdjacentElement("afterend", tempDiv);
 }
 
-function makeLabel(text, forWhich) {
+function makeLabel(text, inputId) {
   let tempLabel = document.createElement("label");
   tempLabel.innerText = text;
-  tempLabel.setAttribute("for", forWhich);
+  tempLabel.setAttribute("for", inputId);
   return tempLabel;
 }
 
 function makeCheckbox(id) {
   let tempInput = document.createElement("input");
   tempInput.id = id;
+  tempInput.value = id;
   tempInput.type = "checkbox";
   return tempInput;
+}
+
+function showError() {
+  document.getElementById("preview").style = "display: none";
+  document.getElementById("error").style = "display: flex";
+  document.getElementById("reloadButton").style = "display: block";
 }
 
 //insertOptions();
