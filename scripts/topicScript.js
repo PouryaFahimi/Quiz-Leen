@@ -2,6 +2,13 @@ const topicButtons = document.getElementsByClassName("category");
 const tagButton = topicButtons[0];
 let tagData = null;
 
+/* sample arrival object
+  { 
+    id: 1, 
+    name: "Linux" 
+  }
+*/
+
 const limitNum = document.getElementsByName('quizNum');
 const levels = document.getElementsByName('level');
 
@@ -66,10 +73,16 @@ async function receiveTags() {
 
 function insertOptions() {
   document.getElementById("preview").style.display = "none";
+  
   let tempDiv = document.createElement("div");
   tempDiv.setAttribute("class", "catHeader");
-  tempDiv.insertAdjacentElement("beforeend", makeCheckbox("alaki"));
-  tempDiv.insertAdjacentElement("beforeend", makeLabel("tag label", "alaki"));
+  tempDiv.style.flexWrap = "wrap";
+
+  for (const el of tagData) {
+    tempDiv.insertAdjacentElement("beforeend", makeCheckbox(el.name));
+    tempDiv.insertAdjacentElement("beforeend", makeLabel(el.name, el.name));
+  }
+
   document.querySelector(".catHeader").insertAdjacentElement("afterend", tempDiv);
 }
 
