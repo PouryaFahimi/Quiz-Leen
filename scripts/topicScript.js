@@ -1,4 +1,5 @@
 const topicButtons = document.getElementsByClassName("category");
+const tagButton = topicButtons[0];
 
 const limitNum = document.getElementsByName('quizNum');
 const levels = document.getElementsByName('level');
@@ -30,3 +31,28 @@ function questionLevel() {
       return el.id;
   }
 }
+
+function insertOptions() {
+  let tempDiv = document.createElement("div");
+  tempDiv.setAttribute("class", "catHeader");
+  tempDiv.insertAdjacentElement("beforeend", makeCheckbox("alaki"));
+  tempDiv.insertAdjacentElement("beforeend", makeLabel("tag label", "alaki"));
+  console.log(document.querySelector(".catHeader"));
+  document.querySelector(".catHeader").insertAdjacentElement("afterend", tempDiv);
+}
+
+function makeLabel(text, forWhich) {
+  let tempLabel = document.createElement("label");
+  tempLabel.innerText = text;
+  tempLabel.setAttribute("for", forWhich);
+  return tempLabel;
+}
+
+function makeCheckbox(id) {
+  let tempInput = document.createElement("input");
+  tempInput.id = id;
+  tempInput.type = "checkbox";
+  return tempInput;
+}
+
+//insertOptions();
