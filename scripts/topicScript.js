@@ -1,6 +1,7 @@
 const topicButtons = document.getElementsByClassName("category");
 const tagButton = topicButtons[0];
 let tagData = null;
+const selectedTags = [];
 
 /* sample arrival object
   { 
@@ -9,8 +10,9 @@ let tagData = null;
   }
 */
 
-const limitNum = document.getElementsByName('quizNum');
-const levels = document.getElementsByName('level');
+const limitNum = document.getElementsByName("quizNum");
+const levels = document.getElementsByName("level");
+const tags = document.getElementsByName("tags");
 
 for (let i = 1; i < topicButtons.length; i++) {
   topicButtons[i].addEventListener("click", () => {
@@ -19,8 +21,9 @@ for (let i = 1; i < topicButtons.length; i++) {
 }
 
 function transfer(value) {
-  localStorage.setItem('limit', questionNum());
-  localStorage.setItem('level', questionLevel());
+  localStorage.setItem("limit", questionNum());
+  localStorage.setItem("level", questionLevel());
+  localStorage.setItem("tags", questionTags());
   localStorage.setItem("category", value);
   location.href = "examPage.html";
 }
@@ -28,7 +31,7 @@ function transfer(value) {
 function questionNum() {
   for (const el of limitNum) {
     if(el.checked)
-      return el.getAttribute('value');
+      return el.getAttribute("value");
   }
 }
 
@@ -39,6 +42,14 @@ function questionLevel() {
   }
 }
 
+function questionTags() {
+  for (const el of tags) {
+    if(el.checked)
+      selectedTags.push(el.value);
+  }
+  return selectedTags.toString();
+}
+
 tagButton.addEventListener("click", () => {
   document.getElementById("preview").style.display = "flex";
   receiveTags();
@@ -47,8 +58,6 @@ tagButton.addEventListener("click", () => {
 async function receiveTags() {
   let apiUrl =
     "https://quizapi.io/api/v1/tags?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm";
-
-  let nokay = false;
 
   await fetch(apiUrl)
     .then((response) => {
@@ -65,9 +74,8 @@ async function receiveTags() {
     })
     .catch((error) => {
       console.error("Error:", error);
-      nokay = true;
       showError();
-      console.log('fetch error');
+      console.log("fetch error");
     });
 }
 
@@ -89,15 +97,16 @@ function insertOptions() {
 function makeLabel(text, inputId) {
   let tempLabel = document.createElement("label");
   tempLabel.innerText = text;
-  tempLabel.setAttribute("for", inputId);
+  tempLabel.setAttribute("for", inputId + "-tag");
   return tempLabel;
 }
 
 function makeCheckbox(id) {
   let tempInput = document.createElement("input");
-  tempInput.id = id;
+  tempInput.id = id + "-tag";
   tempInput.value = id;
   tempInput.type = "checkbox";
+  tempInput.name = "tags";
   return tempInput;
 }
 

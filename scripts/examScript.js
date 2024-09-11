@@ -132,15 +132,19 @@ async function receiveQuiz() {
   let apiUrl =
     "https://quizapi.io/api/v1/questions?apiKey=CIv92fxmBRsxmDYVQTrRyb9FXG1zpnaU5N4gIhWm&limit=";
 
-  apiUrl += localStorage.getItem('limit');
+  apiUrl += localStorage.getItem("limit");
   const category = localStorage.getItem("category");
-  const level = localStorage.getItem('level');
+  const level = localStorage.getItem("level");
+  const tags = localStorage.getItem("tags");
 
   if (category !== "Random") {
     apiUrl += "&category=" + category;
   }
   if (level !== "undefined") {
     apiUrl += "&difficulty=" + level;
+  }
+  if (tags) {
+    apiUrl += "&tags=" + tags;
   }
 
   let nokay = false;
@@ -164,7 +168,7 @@ async function receiveQuiz() {
       // here must put an error window
       nokay = true;
       showError();
-      console.log('fetch error');
+      console.log("fetch error");
     });
 
   // const response = await fetch(apiUrl);
@@ -176,7 +180,7 @@ async function receiveQuiz() {
 
   if (quizData === null) {
     showError();
-    console.log('quiz data is null');
+    console.log("quiz data is null");
     return false;
   } else loadQuiz();
 }
