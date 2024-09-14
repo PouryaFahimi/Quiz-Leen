@@ -13,11 +13,12 @@ const selectedTags = [];
 const limitNum = document.getElementsByName("quizNum");
 const levels = document.getElementsByName("level");
 const tags = document.getElementsByName("tags");
+let tag_is_open = false;
 
 for (let i = 1; i < topicButtons.length; i++) {
   topicButtons[i].addEventListener("click", () => {
     transfer(topicButtons[i].id);
-  });  
+  });
 }
 
 function transfer(value) {
@@ -30,29 +31,34 @@ function transfer(value) {
 
 function questionNum() {
   for (const el of limitNum) {
-    if(el.checked)
+    if (el.checked)
       return el.getAttribute("value");
   }
 }
 
 function questionLevel() {
   for (const el of levels) {
-    if(el.checked)
+    if (el.checked)
       return el.id;
   }
 }
 
 function questionTags() {
   for (const el of tags) {
-    if(el.checked)
+    if (el.checked)
       selectedTags.push(el.value);
   }
   return selectedTags.toString();
 }
 
 tagButton.addEventListener("click", () => {
-  document.getElementById("preview").style.display = "flex";
-  receiveTags();
+  if (!tag_is_open) {
+    tag_is_open = true;
+    document.getElementById("preview").style.display = "flex";
+    tagButton.innerText = "Start with Tags";
+    receiveTags();
+  } else
+    transfer("Random");
 });
 
 async function receiveTags() {
@@ -81,7 +87,7 @@ async function receiveTags() {
 
 function insertOptions() {
   document.getElementById("preview").style.display = "none";
-  
+
   let tempDiv = document.createElement("div");
   tempDiv.setAttribute("class", "catHeader");
   tempDiv.style.flexWrap = "wrap";
@@ -91,6 +97,8 @@ function insertOptions() {
     tempDiv.insertAdjacentElement("beforeend", makeLabel(el.name, el.name));
   }
 
+  tempDiv.className = "detailBox";
+  tempDiv.style.marginLeft = 0;
   document.querySelector(".catHeader").insertAdjacentElement("afterend", tempDiv);
 }
 
@@ -98,6 +106,7 @@ function makeLabel(text, inputId) {
   let tempLabel = document.createElement("label");
   tempLabel.innerText = text;
   tempLabel.setAttribute("for", inputId + "-tag");
+  tempLabel.className = "details";
   return tempLabel;
 }
 
@@ -107,6 +116,7 @@ function makeCheckbox(id) {
   tempInput.value = id;
   tempInput.type = "checkbox";
   tempInput.name = "tags";
+  tempInput.className = "quizDetails";
   return tempInput;
 }
 
