@@ -4,7 +4,7 @@ Welcom to this repo, **Quiz Leen** is a simple project that I developed to impro
 
 ### Installation
 
-First clone the repository, then open home page with your favorite browser or run it using live sever and enjoy :)
+First clone the repository, then open home page with your favorite browser or run it using live server and enjoy :)
 
 ### Sections
 
@@ -34,6 +34,6 @@ The new features that I look for:
 - Showing quiz report with correct answers
 - Add animation to styles
 - Reduce duplicate code
-- Bookmark questions
+- More descriptive errors
 
 Thank you for supporting :)
