@@ -136,6 +136,7 @@ ul li label {
   border-radius: 100%;
   position: relative;
   vertical-align: bottom;
+  transition: background-color 0.3s;
 }
 
 .answer:hover {
@@ -265,6 +266,7 @@ footer img {
   margin: 0 16px;
   padding: 0 12px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .quizDetails:checked + label {
@@ -337,5 +339,6 @@ footer img {
 
   .detailBox {
     margin: 10px 0;
+    row-gap: 16px;
   }
 }

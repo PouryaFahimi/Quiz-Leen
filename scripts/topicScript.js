@@ -22,9 +22,16 @@ for (let i = 1; i < topicButtons.length; i++) {
 }
 
 function transfer(value) {
+  localStorage.clear();
+
   localStorage.setItem("limit", questionNum());
   localStorage.setItem("level", questionLevel());
-  localStorage.setItem("tags", questionTags());
+
+  if (value === "Tags") {
+    localStorage.setItem("tags", questionTags());
+    value = "Random"
+  }
+
   localStorage.setItem("category", value);
   location.href = "examPage.html";
 }
@@ -58,7 +65,7 @@ tagButton.addEventListener("click", () => {
     tagButton.innerText = "Start with Tags";
     receiveTags();
   } else
-    transfer("Random");
+    transfer("Tags");
 });
 
 async function receiveTags() {
